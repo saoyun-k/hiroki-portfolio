@@ -117,7 +117,7 @@ header {
 }
 
 .firstSectionPhoto {
-  background-image: url(img/mainBgi9.png);
+  background-image: url(mainBgi9.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
