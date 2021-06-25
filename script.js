@@ -1,31 +1,36 @@
-$(function() {
-  $('#wrapper').animate({
-    'opacity':  0,
-    'visibility' : 'hidden'
-  },0);
-});
-function loaded() {
+const loaded = (function() {
 	$('.lodingTitle').removeClass('action');
-}
+});
 
-$(window).on('load',function () {
-  setTimeout(function() {
-    loaded();
-		$('#wrapper').animate({
-      'opacity' : 1,
-      'visibility' : 'visible'
-      },3000);
-    },3000);
-  });
-  setTimeout(function() {
-    loaded();
-  },10000);
+// if (window.matchMedia( "(max-width: 768px)" ).matches) {
+if (window.matchMedia( "(max-width: 600px)" ).matches) {
+	loaded();
+} else {
+	$(function() {
+		$('#wrapper, footer').animate({
+			'opacity':  0,
+			'visibility' : 'hidden'
+		},0);
+	});
+	$(window).on('load',function () {
+		setTimeout(function() {
+			loaded();
+			$('#wrapper, footer').animate({
+				'opacity' : 1,
+				'visibility' : 'visible'
+				},3000);
+			},3000);
+		});
+		setTimeout(function() {
+			loaded();
+		},10000);
+}
 
 
 $(function() {
 	$('.headerTop li a').each(function() {
-   let backColor = $(this).css('backgroundColor');
-   let fontColor = $(this).css('color');
+   const backColor = $(this).css('backgroundColor');
+   const fontColor = $(this).css('color');
 
     $('.headerTop li a').hover(
 	    function() {
@@ -43,9 +48,11 @@ $(function() {
 	});
 
 	$(document).on('click', '.scrollButton, #thirdSectionContentButtonId', function() {
+
+		const menuAttribute = $(this).attr('href');
+		
 		if ( $('.scrollButton').is(this) ) {
-			let menuAttribute = $(this).attr('href');
-			let menuPosition = $(menuAttribute).offset().top -95;
+			const menuPosition = $(menuAttribute).offset().top -95;
 			$('html,body').animate({
 				'scrollTop': menuPosition
 			},800);
@@ -56,6 +63,7 @@ $(function() {
 		}
 	});
 });
+
 		/* --------------------一文字ずつアニメーション-------------------- */
 
 function thankMessage() {
@@ -83,13 +91,10 @@ function thankMessage() {
 	}
 const scrollEvent = function() {
 	window.addEventListener("scroll", function func() {
-    let scrollValue = window.pageYOffset;                                    //画面上端のスクロール量
+    let scrollValue = window.pageYOffset;
 		let scrollEle = document.querySelector(".fourthSection");
-		let scrollTops = scrollEle.getBoundingClientRect().top + scrollValue;    //サイト上端から要素上端までの距離
-		let windowHeight = window.innerHeight;                                   //画面の高さ
-		// console.log(scrollTops);
-		// console.log(scrollValue);
-		// console.log(windowHeight);
+		let scrollTops = scrollEle.getBoundingClientRect().top + scrollValue;
+		let windowHeight = window.innerHeight;
 		const scrollAll = scrollTops - windowHeight + 500;
 	if (scrollValue >= scrollAll) {
 	  thankMessage();
@@ -98,9 +103,6 @@ const scrollEvent = function() {
 	});
 };
 scrollEvent();
-
-		/* ------------------------------------------------------------ */
-
 
 		/* --------------------トップ画面にスクロール-------------------- */
 		const logTopScrollButton = document.getElementById('logTopScrollButton');
@@ -111,4 +113,4 @@ scrollEvent();
 		  left: 0,
 			behavior: 'smooth'});
 	});
-		/* ---------------------------------------------------------- */
+
