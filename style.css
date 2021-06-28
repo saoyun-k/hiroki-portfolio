@@ -191,6 +191,11 @@ line-height: 2.5;
   left: 28%;
 }
 
+.secondSectionContentRight p {
+  position: relative;
+  z-index: 1;
+}
+
 .secondSection2 {
   position: relative;
   width: calc(100% - 300px);
@@ -427,7 +432,7 @@ line-height: 2.5;
   bottom: 7%;
   width: 200px;
   height: 200px;
-  transition:all .5s ease-in-out;
+  transition:all .3s ease-in-out;
 }
 
 .fourthSectionContent .animationMessage {
@@ -476,6 +481,198 @@ footer .Copyright {
   color: #f2f2f2;
 }
 
+  /* ---------------------タブレット---------------------- */
+
+@media screen and (max-width: 1190px) {
+  .lodingTitle {
+    text-align: center;
+  }
+  .lodingTitle .loadingText img {
+    width: 80%;
+  }
+
+
+    /* --------------------header-------------------- */
+
+    header .headerTop {
+      position: static;
+      margin: auto;
+      line-height: 72px;
+    }
+  
+    .headerTop ul {
+      display: none;
+    }
+  
+    .headerTop .headerSiteTitle {
+      margin-top: 8%;
+    }
+  
+    /* ---------------------logSection--------------------- */
+  
+    .logSection {
+      display: none;
+    }
+
+    /* --------------------firstSection-------------------- */
+  
+    .content .firstSection {
+      width: auto;
+      margin: auto;
+    }
+  
+    .content .firstSection .firstSectionPhoto {
+      background-size: 100%;
+      height: 93.1vh;
+      margin-top: 6.5%;
+    }
+  
+    /* --------------------secondSection-------------------- */
+  
+    .content .secondSection {
+      position: static;
+      margin: auto;
+      padding: 0;
+      background-color: transparent;
+    }
+  
+    .content .secondSection::after {
+      content: none;
+    }
+  
+    .content .secondSection .secondSectionTitle  {
+      padding-top: 3rem;
+    }
+    .content .secondSection .secondSectionTitle h2 {
+      position: static;
+      text-align: center;
+      margin-bottom: 4rem;
+      font-size: 22px;
+      -webkit-writing-mode: initial;
+      -ms-writing-mode: initial;
+      writing-mode: initial;
+    }
+  
+    .content .secondSection .secondSectionContent {
+      display: block;
+      width: auto;
+    }
+  
+    .content .secondSection .secondSectionContentLeft {
+      width: auto;
+      margin: auto;
+    }
+  
+    .content .secondSection .secondSectionContentLeft div {
+      text-align: center;
+      padding: 0;
+    }
+  
+    .content .secondSection .secondSectionContentLeft .secondSectionContentLeftImage img {
+      position: static;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+    }
+  
+    .content .secondSection .secondSectionContentRight {
+      position: static;
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      margin-top: 2rem;
+    }
+  
+    .secondSection2 {
+      display: none;
+    }
+  
+    /* --------------------thirdSection-------------------- */
+  
+    .thirdSection {
+      position: relative;
+      margin-top: 8rem;
+      margin-bottom: 8rem;
+      padding-top: 1rem;
+    }
+    
+    .thirdSection .thirdSectionTitle h2 {
+      transform: none;
+      font-size: 22px;
+    }
+  
+    .thirdSection .thirdSectionContent {
+      width: auto;
+      height: auto;
+      margin: auto;
+    }
+  
+    .thirdSection .thirdSectionContent .thirdSectionContentWorks ul {
+      display: block;
+    }
+  
+    .thirdSection .thirdSectionContent .thirdSectionContentWorks ul li {
+      text-align: center;
+      width: auto;
+    }
+  
+    .thirdSectionContentButton {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -25%;
+    left: 49%;
+    width: 15px;
+    height: 15px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-top: 3px solid #c2c2c2;
+    border-right: 3px solid #c2c2c2;
+    opacity: .75;
+    }
+  
+    .thirdSectionContentButton::after {
+      content: "";
+      position: absolute;
+      bottom: 74%;
+      left: 72%;
+      width: 15px;
+      height: 15px;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      border-top: 3px solid #c2c2c2;
+      border-right: 3px solid #c2c2c2;
+      opacity: .75;
+    }
+  
+    /* --------------------fourthSection-------------------- */
+  
+    .fourthSection {
+      margin: auto;
+      margin-top: 5rem;
+    }
+    .fourthSection .fourthSectionContent {
+      width: auto;
+      height: auto;
+      padding: 2rem;
+    }
+  
+    .fourthSection .fourthSectionContent .fourthSectionContentTitle {
+      font-size: 22px;
+    }
+    .fourthSection .fourthSectionContent .fourthSectionContentLead  {
+      margin-top: 4rem;
+    }
+    .fourthSection .logTopScroll {
+      display: none;
+    }
+  
+    .fourthSection .fourthSectionContent .animationMessage {
+      display: none;
+    }
+  }
+
   /* --------------------スマートフォン-------------------- */
 
 @media screen and (max-width: 600px) {
@@ -485,6 +682,7 @@ footer .Copyright {
   header .headerTop {
     position: static;
     margin: auto;
+    line-height: 50%;
   }
 
   .headerTop ul {
@@ -498,9 +696,7 @@ footer .Copyright {
   /* ---------------------logSection--------------------- */
 
   .logSection {
-    position: absolute;
-    top: 35%;
-    left: 23%;
+    display: none;
   }
   /* --------------------firstSection-------------------- */
 
@@ -510,7 +706,9 @@ footer .Copyright {
   }
 
   .content .firstSection .firstSectionPhoto {
-    background-size: contain;
+    background-size: 100%;
+    height: 88.1vh;
+    margin-top: 14.5%;
   }
 
   /* --------------------secondSection-------------------- */
@@ -527,12 +725,11 @@ footer .Copyright {
   }
 
   .content .secondSection .secondSectionTitle  {
-    padding-top: 42%;
+    padding-top: 0;
   }
   .content .secondSection .secondSectionTitle h2 {
     position: static;
     text-align: center;
-    margin-top: 4rem;
     margin-bottom: 4rem;
     font-size: 22px;
     -webkit-writing-mode: initial;
@@ -607,7 +804,7 @@ footer .Copyright {
   content: "";
   position: absolute;
   z-index: 1;
-  bottom: -19%;
+  bottom: -25%;
   left: 49%;
   width: 15px;
   height: 15px;
