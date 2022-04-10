@@ -1,184 +1,146 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <title>Hiroki's Portfolio</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiroki's Portfolio</title>
-  <meta name="description" content="Webプログラマー加藤大貴のポートフォリオサイト">
+  <meta name="description" content="Webエンジニア加藤大貴のポートフォリオサイト">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
-  <div class="lodingTitle action" id="lodingTitle" >
-    <div class="loadingText">
-      <img src="img/logSiteTitle1.png" alt="Hirokis Portfolio">
-    </div> 
-  </div>
-  <div class="wrapper" id="wrapper">
-    <header>
-      <div class="headerTop">
-        <nav>
-          <h1 class="headerSiteTitle">
-            <img src="img/logSiteTitle2.png" width="300" height="250" alt="Hirokis Portfolio">
-          </h1>
-          <ul class="scrollUnorderedlist">
-            <li class="scrollList1">
-              <a class="scrollButton" href="#menu1">About</a>
-            </li>
-            <li class="scrollList2">
-              <a class="scrollButton" href="#menu2">Skill</a>
-            </li>
-            <li class="scrollList3">
-              <a class="scrollButton" href="#menu3">Works</a>
-            </li>
-            <li class="scrollList4">
-              <a class="scrollButton" href="#menu4">Contact</a>
-            </li>
-          </ul>
-        </nav>
+  <div class="wrapper">
+    <header class="header">
+      <div class="site-title">
+        <a class="site-title__anchor"><img src="images/portfolio-title.svg" alt="hiroki's portfolio"></a>
       </div>
+      <nav>
+        <ul class="header-menu">
+          <li class="header-menu__list"><a class="header-menu__list-inner">About</a></li>
+          <li class="header-menu__list"><a class="header-menu__list-inner">Works</a></li>
+          <li class="header-menu__list"><a class="header-menu__list-inner">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <div class="content">
-        <div class="logSection">
-          <img src="img/log.png" width="340" height="300" alt="サイトロゴマーク">
-        </div>
-        <section class="firstSection">
-          <div class="firstSectionPhoto" id="firstSectionPhotoId"></div>
-        </section>
-        <section class="secondSection" id="menu1">
-          <div class="secondSectionTitle">
-            <h2>About</h2>
+      <section class="first-view">
+        <div class="first-view__container">
+          <div class="logo">
+            <img src="images/logo.svg" alt="logo">
           </div>
-          <div class="secondSectionContent">
-            <div class="secondSectionContentLeft">
-              <div class="secondSectionContentLeftImage">
-                <img src="img/myPhoto.png" width="350" height="350" alt="自分の写真">
-              </div>
-            </div>
-            <div class="secondSectionContentRight">
-              <div>
-                <p>
-                  愛知県在住Webエンジニア(志望)です。<br>
-                  現在は、独学でWebサイト制作をしながら、<br>
-                  活動中です。<br>
-                  フロントエンジニア目指してます。<br>
-                  Everything is steadily!!!<br>
-                </p>
-              </div>
-            </div>
+          <div class="first-view__content">
+            <h1 class="first-view__content__item">
+              <span class="first-view__content__item-inner">WEB SITE</span>
+              <span class="first-view__content__item-inner coding">CODING</span>
+            </h1>
           </div>
         </div>
-        </section>
-        <section class="secondSection2" id="menu2">
-          <div class="secondSection2Title">
-            <h2>Skill</h2>
+      </section>
+      <section class="works">
+        <div class="works__container">
+          <div class="works__content">
+            <h2 class="works__content__item common-title">Works</h2>
           </div>
-          <div class="secondSection2Content">
-            <div class="secondSection2ContentRight">
-              <table>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/html5-original-wordmark.svg?size=60&color=currentColor" /></td>
-                  <td class="skill rate4">HTML</td>
-                </tr>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/css3-original-wordmark.svg?size=60&color=currentColor" /></td>
-                  <td class="skill2 rate4">CSS</td>
-                </tr>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/javascript-original.svg?size=60&color=currentColor" /></td>
-                  <td class="skill3 rate3">Java Script</td>
-                </tr>
-              </table>
-              <table>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/illustrator-plain.svg?size=60&color=currentColor" /></td>
-                  <td class="skill4 rate2">Illustrator</td>
-                </tr>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/wordpress-original.svg?size=60&color=currentColor" /></td>
-                  <td class="skill5 rate2">Word Press</td>
-                </tr>
-                <tr>
-                  <td><img src="https://icongr.am/devicon/github-original-wordmark.svg?size=60&color=currentColor" /></td>
-                  <td class="skill6 rate2">Git Hub</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </section>
-        <section class="thirdSection" id="menu3">
-          <div class="thirdSectionTitle">
-            <h2>Works</h2>
-          </div>
-          <div class="thirdSectionContent">
-            <div class="thirdSectionContentWorks">
-              <ul>
-                <li>
-                  <span>
-                    <a href="https://saoyun-k.github.io/saoyun-k"><img src="img/siteTop.png"  width="500" height="300" alt="ポートフォリオサイトの写真"></a>
-                  </span>
-                  <div class="thirdSectionContentWorksInner">
-                    <div class="thirdSectionContentWorksInnerTitle">Portfolio</div>
-                    <div class="thirdSectionContentWorksInnerText">自分のポートフォリオサイトです。</div>
-                  </div>
-                </li>
-                <li>
-                    <span>
-                      <a href="https://hiroki-saoyun.com/"><img src="img/siteTop2.png" width="500" height="300" alt="浜岡工業サイトトップ"></a>
-                    </span>
-                  </a>
-                  <div class="thirdSectionContentWorksInner">
-                    <div class="thirdSectionContentWorksInnerTitle">浜岡工業 Webサイト</div>
-                    <div class="thirdSectionContentWorksInnerText">WordPressの_sを使って制作しました。</div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="thirdSectionContentBottom">
-            <a class="thirdSectionContentButton" id="thirdSectionContentButtonId" href="#"></a>
-          </div>
-        </section>
-        <section class="fourthSection" id="menu4">
-          <div class="fourthSectionContent">
-            <div class="fourthSectionContentTitle">
-              <h2>Contact</h2>
-            </div>
-            <div class="fourthSectionContentLead">
-              <p>お問い合わせは、メールでお願いいたします。</p>
-            </div>
-            <div class="fourthSectionContentContact">
-              <ul>
-                <li>
-                  <div><i class="far fa-envelope fa-2x"></i></div>
-                </li>
-                <li>
-                  <p>12hiroki30@gmail.com</p>
-                </li>
-              </ul>
-            </div>
-            <div class="logTopScroll">
-              <a class="logTopScrollButton" id="logTopScrollButton" href="">
-                <img src="img/logTopScroll.png" alt="トップ画面へスクロールボタン">
+          <div class="works__contents">
+            <article class="works__contents__items">
+              <a href="#">
+                <div class="works__contents__items-inner wk-photo">
+                  <img src="images/portfolio2.png" alt="portfolio"><span class="wk-tag"></span>
+                </div>
+                <div class="works__contents__items-inner wk-data">
+                  <time class="works__contents__items-inner__time" datetime="">2021/11/10</time>
+                  <h3 class="works__contents__items-inner__title">Portfolio</h3>
+                  <p class="works__contents__items-inner__text">自分のポートフォリオサイトです。</p>
+                </div>
               </a>
+            </article>
+            <article class="works__contents__items">
+              <a href="#">
+                <div class="works__contents__items-inner wk-photo">
+                  <img src="images/portfolio2.png" alt=""><span class="wk-tag"></span>
+                </div>
+                <div class="works__contents__items-inner wk-data">
+                  <time class="works__contents__items-inner__time" datetime="">2021/11/10</time>
+                  <h3 class="works__contents__items-inner__title">Portfolio</h3>
+                  <p class="works__contents__items-inner__text">自分のポートフォリオサイトです。</p>
+                </div>
+              </a>
+            </article>
+            <article class="works__contents__items">
+              <a href="#">
+                <div class="works__contents__items-inner wk-photo">
+                  <img src="images/portfolio2.png" alt=""><span class="wk-tag"></span>
+                </div>
+                <div class="works__contents__items-inner wk-data">
+                  <time class="works__contents__items-inner__time" datetime="">2021/11/10</time>
+                  <h3 class="works__contents__items-inner__title">Portfolio</h3>
+                  <p class="works__contents__items-inner__text">自分のポートフォリオサイトです。</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="works__content wk-list">
+            <a href="" class="works__content__button site-btn"><span class="works__content__button__text">一覧を見る</span></a>
+          </div>
+        </div>
+      </section>
+        <section class="skill">
+          <div class="skill__container">
+            <div class="skill__content">
+              <h2 class="skill__content__item common-title">Skill</h2>
             </div>
-            <div class="animationMessage">Thank you for watching!!</div>
+            <div class="skill__contents">
+              <div class="skill__contents__item">
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-1">HTML<span class="skill-set rate4"></span></dt>
+                  <dd class="skill__contents__item-inner__text">基本的なマークアップは可能です。<br>HTMLタグをルールに沿って適切に記述して、クローラビリティ、ユーザビリティ、アクセシビリティの考慮した構造に仕上げるように意識しています。
+                  </dd>
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-2">CSS/Sass<span class="skill-set rate4"></span></dt>
+                  <dd class="skill__contents__item-inner__text">SCSSを使用したコーディングも可能です。<br>可読性、保守性を大切にして記述しています。</dd>
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-3">Java Script<span class="skill-set rate2"></span></dt>
+                  <dd class="skill__contents__item-inner__text">プラグインを利用したアニメーションの実装が可能です。</dd>
+                 </dl>
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-4">Illustrator<span class="skill-set rate2"></span></dt>
+                  <dd class="skill__contents__item-inner__text">簡単なロゴ、アイコンの作成なら可能です。<br>自分のポートフォリオのロゴも作成しました。</dd>
+                </dl>
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-5">Word Press<span class="skill-set rate3"></span></dt>
+                  <dd class="skill__contents__item-inner__text">カスタマイズからオリジナルのテーマ作成に到るまで対応可能です。</dd>
+                </dl>
+                <dl class="skill__contents__item-inner">
+                  <dt class="skill__contents__item-inner__logo-6">Git Hub<span class="skill-set rate1"></span></dt>
+                  <dd class="skill__contents__item-inner__text"></dd>
+                </dl>
+              </div>
+            </div>
           </div>
         </section>
-      </div>
+        <section class="contact">
+          <div class="contact__container">
+            <div class="contact__content">
+              <h2 class="contact__content__item common-title">Contact</h2>
+            </div>
+            <div class="contact__content con-intr">
+              <p>お問い合わせは<br class="con-br">メールでお願いいたします。</p>
+            </div>
+            <div class="contact__content con-btn">
+              <a href="" class="contact__content__button site-btn"><span class="contact__content__button__text">CONTACT</span></a>
+            </div>
+          </div>
+        </section>
     </main>
-    <footer>
-      <p class="Copyright">
-       Copyright©HIROKI  KATO. All Rights Reserved.
-      </p>
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="copyright">
+         Copyright©HIROKI  KATO. All Rights Reserved.
+        </p>
+      </div>
+      <div class="footer__content-sp"></div>
     </footer>
   </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
