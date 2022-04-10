@@ -1,0 +1,57 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/common-site-btn";
+@use "../mixin/common-site-btn" as cb;
+@forward "../mixin/common-title";
+@use "../mixin/common-title" as ct;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+.contact {
+  width: vp.convertPercent(1000px, 1280px);
+  margin: 0 auto; 
+  @include sp.sitePaddingBase(100px, 0px, 160px, 0px);
+  @include madia.deviceBreakPointMax(600px) {
+    @include sp.sitePaddingSp(100px, 0px, 160px, 0px);
+  }
+  &__content {
+    &__item {
+      &.common-title {
+        @include ct.common-title;
+      }
+    }
+    &.con-intr {
+      text-align: center;
+      @include sp.sitePaddingBase(100px, 0px, 50px, 0px);
+      letter-spacing: .12em;
+      line-height: 1.5em;
+      font-size: 2.0rem;
+      color: #252525;
+      @include madia.deviceBreakPointMax(600px) {
+        @include sp.sitePaddingSp(100px, 0px, 100px, 0px);
+        font-size: 3.2rem;
+      }
+      .con-br {
+        display: none;
+        @include madia.deviceBreakPointMax(600px) {
+          display: block;
+        }
+      }
+    }
+    &.con-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: vp.convertPercent(430px, 1000px);
+      margin: 0 auto;
+      @include cb.common-site-btn;
+      @include madia.deviceBreakPointMax(600px) {
+        width: auto;
+      }
+    }
+  }
+}

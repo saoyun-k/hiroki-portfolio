@@ -1,0 +1,6 @@
+@forward "../../mixin/common-first-cover";
+@use "../../mixin/common-first-cover" as cfc;
+
+.first-view__cover {
+  @include cfc.common-first-cover;
+}

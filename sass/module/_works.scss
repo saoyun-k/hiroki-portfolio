@@ -1,0 +1,98 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/common-site-btn";
+@use "../mixin/common-site-btn" as cb;
+@forward "../mixin/common-title";
+@use "../mixin/common-title" as ct;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+.works {
+  width: vp.convertPercent(1000px, 1280px);
+  margin: 0 auto; 
+  @include sp.sitePaddingBase(350px, 0px, 100px, 0px);
+  @include madia.deviceBreakPointMax(600px) {
+    padding-bottom: vp.convertVw(150px, 600px);
+  }
+  &__content {
+    &__item {
+      &.common-title {
+        @include ct.common-title;
+      }
+    }
+    &.wk-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: vp.convertPercent(430px, 1000px);
+      margin: 0 auto;
+      margin-top: vp.convertVw(50px, 1280px);
+      @include cb.common-site-btn;
+      @include madia.deviceBreakPointMax(600px) {
+        width: auto;
+        margin-top: vp.convertVw(50px, 600px);
+      }
+    }
+  }
+  &__contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: vp.convertVw(50px, 1280px);
+    @include madia.deviceBreakPointMax(600px) {
+      display: block;
+      margin-top: vp.convertVw(50px, 600px);
+    }
+    &__items {
+      width: vp.convertPercent(315px, 1000px);
+      margin-top: vp.convertVw(50px, 1280px);
+      @include madia.deviceBreakPointMax(600px) {
+        width: auto;
+      }
+      &:not(:first-child) {
+        @include madia.deviceBreakPointMax(600px) {
+          margin-top: vp.convertVw(50px, 600px);
+        }
+      }
+      &-inner {
+        &.wk-data {
+          .works__contents__items-inner {
+            &__time {
+              display: block;
+              margin-top: vp.convertVw(13px, 1280px);
+              font-size: 1.6rem;
+              color: #A4ABB0;
+              @include madia.deviceBreakPointMax(600px) {
+                display: none;
+              }
+            }
+            &__title {
+              margin-top: vp.convertVw(13px, 1280px);
+              letter-spacing: .12em;
+              line-height: 1.2em;
+              font-size: 2.0rem;
+              color: #5B5C5C;
+              @include madia.deviceBreakPointMax(600px) {
+                font-size: 2.2rem;
+              }
+            }
+            &__text {
+              margin-top: vp.convertVw(13px, 1280px);
+              line-height: 1.5em;
+              font-size: 1.6rem;
+              color: #A4ABB0;
+              @include madia.deviceBreakPointMax(600px) {
+                line-height: 2em;
+                font-size: 1.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

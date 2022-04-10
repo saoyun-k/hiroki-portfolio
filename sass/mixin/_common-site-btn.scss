@@ -1,0 +1,48 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+@mixin common-site-btn {
+  .site-btn {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    letter-spacing: .12em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: "Avenir";
+    font-weight: 900;
+    color: #444444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #000000;
+    transition: transform .2s;
+   }
+   &::before {
+    transform: translate(vp.convertVw(-3px, 1280px), vp.convertVw(-3px, 1280px));
+   }
+   &::after {
+    transform: translate(vp.convertVw(3px, 1280px), vp.convertVw(3px, 1280px));
+   }
+   &:hover {
+     &::before, &::after {
+      transform: translate(0);
+     }
+   }
+  }
+}

@@ -1,0 +1,14 @@
+@forward "../../config/variables";
+@use "../../config/variables" as var;
+@forward  "../../function/convert-vp";
+@use "../../function/convert-vp" as vp;
+@forward "../../mixin/madia";
+@use "../../mixin/madia";
+@forward  "../../mixin/site-padding";
+@use "../../mixin/site-padding" as sp;
+
+.about {
+  &__container {
+    padding-top: vp.convertVw(100px, 1280px);
+  }
+}

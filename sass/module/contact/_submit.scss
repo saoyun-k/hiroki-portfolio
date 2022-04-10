@@ -1,0 +1,11 @@
+@forward "../../mixin/contact-submit";
+@use "../../mixin/contact-submit" as cs;
+@forward  "../../mixin/site-padding";
+@use "../../mixin/site-padding" as sp;
+
+
+.submit {
+  @include cs.contact-submit;
+  @include sp.sitePaddingBase(75px, 0px, 209px, 0px);
+  letter-spacing: .12em;
+}

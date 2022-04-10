@@ -1,0 +1,52 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+.first-view__container {
+  display: flex;
+  justify-content: flex-end;
+}
+.logo {
+  width: vp.convertPercent(200px, 1280px);
+  height: vp.convertVh(200px, 1280px);
+  transform: translate(-15%, 165%);
+  @include madia.deviceBreakPointMax(600px) {
+   display: none;
+  }
+}
+.first-view__content {
+  width: vp.convertPercent(1000px, 1280px);
+  height: vp.convertVh(580px, 1280px);
+  font-size: 13rem;
+  font-family: "Avenir";
+  font-weight: 900;
+  color: #FFFFFF;
+  background-color: var.$mainColor;
+  @include madia.deviceBreakPointMax(600px) {
+    width: 100%;
+    height: vp.convertVh(750px, 600px);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5em;
+    transform: translateY(35%);
+    @include madia.deviceBreakPointMax(600px) {
+      transform: translateY(20%);
+    }
+    &-inner {
+      &.coding {
+        text-align: end;
+        @include madia.deviceBreakPointMax(600px) {
+          text-align: initial;
+        }
+      }
+    }
+  }
+}

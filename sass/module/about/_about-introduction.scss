@@ -1,0 +1,61 @@
+@forward "../../config/variables";
+@use "../../config/variables" as var;
+@forward  "../../function/convert-vp";
+@use "../../function/convert-vp" as vp;
+@forward "../../mixin/madia";
+@use "../../mixin/madia";
+@forward  "../../mixin/site-padding";
+@use "../../mixin/site-padding" as sp;
+
+.about__content {
+  width: vp.convertPercent(1000px, 1280px);
+  margin: 0 auto;
+  @include madia.deviceBreakPointMax(600px) {
+    width: auto;
+  }
+  &__items {
+    $this: &;
+    &.ab-introduction {
+      display: flex;
+      justify-content: space-evenly;
+      width: vp.convertPercent(997px, 1000px);
+      margin: 0 auto;
+      color: #434343;
+      background-color: #FAFAFA;
+      box-shadow: vp.convertVw(10px, 997px) vp.convertVw(10px, 997px) vp.convertVw(10px, 997px) rgba(0, 0, 0, 0.5);
+      @include madia.deviceBreakPointMax(600px) {
+        flex-wrap: wrap;
+        background: transparent;
+        box-shadow: none;
+      }
+      #{$this}-inner:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: vp.convertPercent(330px, 997px);
+        @include sp.sitePaddingBase(75px, 0px, 75px, 0px);
+        letter-spacing: .21em;
+        line-height: 1.4em;
+        font-size: 3.6rem;
+        @include madia.deviceBreakPointMax(600px) {
+          text-align: center;
+          width: auto;
+          font-size: 4.5rem;
+        }
+      }
+      #{$this}-inner:last-child {
+        width: vp.convertPercent(415px, 997px);
+        @include sp.sitePaddingBase(90px, 0px, 90px, 0px);
+        letter-spacing: .08em;
+        line-height: 2em;
+        font-size: 2.0rem;
+        @include madia.deviceBreakPointMax(600px) {
+          text-align: center;
+          width: auto;
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}

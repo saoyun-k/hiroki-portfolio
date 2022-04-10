@@ -1,0 +1,23 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+@mixin common-first-cover {
+  .first-view__cover__content {
+    text-align: center;
+    width: 100%;
+    @include sp.sitePaddingBase(100px, 0px, 100px, 0px);
+    letter-spacing: .21em;
+    font-size: 4.8rem;
+    font-family: "Avenir";
+    font-weight: 900;
+    color: var.$colorWhite;
+    background-color: var.$mainColor;
+    @include madia.deviceBreakPointMax(600px) {
+      font-size: 3.8rem;
+    }
+  }
+}

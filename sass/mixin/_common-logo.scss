@@ -1,0 +1,70 @@
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+@mixin value-1 {
+  position: relative;
+  @include sp.sitePaddingBase(35px, 35px, 35px, 135px);
+  letter-spacing: .12em;
+  font-size: 2.4rem;
+  color: #212138;
+}
+@mixin value-2 {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: vp.convertVw(95px, 1280px);
+  height: vp.convertVh(95px, 1280px);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin common-logo-1 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/html5-original-wordmark.svg?size=60&color=currentColors");
+  }
+}
+
+@mixin common-logo-2 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/css3-original-wordmark.svg?size=60&color=currentColor");
+  }
+}
+
+@mixin common-logo-3 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/javascript-original.svg?size=60&color=currentColor");
+  }
+}
+
+@mixin common-logo-4 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/illustrator-plain.svg?size=60&color=currentColor");
+  }
+}
+
+@mixin common-logo-5 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/wordpress-original.svg?size=60&color=currentColor");
+  }
+}
+
+@mixin common-logo-6 {
+  @include value-1;
+  &::before {
+    @include value-2;
+    background-image: url("https://icongr.am/devicon/github-original-wordmark.svg?size=60&color=currentColor");
+  }
+}

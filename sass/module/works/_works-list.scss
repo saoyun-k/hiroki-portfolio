@@ -1,0 +1,27 @@
+@forward "../../config/variables";
+@use "../../config/variables" as var;
+@forward  "../../function/convert-vp";
+@use "../../function/convert-vp" as vp;
+@forward "../../mixin/madia";
+@use "../../mixin/madia";
+@forward  "../../mixin/site-padding";
+@use "../../mixin/site-padding" as sp;
+
+.works-list {
+  width: vp.convertPercent(1000px, 1280px);
+  margin: 0 auto;
+  margin-top: 0;
+  padding-top: vp.convertVw(100px, 1000px);
+  @include madia.deviceBreakPointMax(600px) {
+    padding: 0;
+    padding-top: vp.convertVw(150px, 600px);
+  }
+  &:not(:first-child) {
+    @include madia.deviceBreakPointMax(600px) {
+      padding-top: 0;
+    }
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

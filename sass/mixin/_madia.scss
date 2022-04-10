@@ -1,0 +1,10 @@
+@mixin deviceBreakPointMin($breakPoint) {
+  @media screen and (min-width: $breakPoint) {
+    @content;
+  }
+}
+@mixin deviceBreakPointMax($breakPoint) {
+  @media screen and (max-width: $breakPoint) {
+    @content;
+  }
+}

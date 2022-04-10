@@ -1,0 +1,30 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+
+html {
+    font-size: 0.78125vw;
+    @include madia.deviceBreakPointMax(600px) {
+      font-size: 1.66667vw;
+    }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "游ゴシック体", sans-serif;
+  font-weight: bold;
+}
+
+.wrapper {
+  overflow: hidden;
+}

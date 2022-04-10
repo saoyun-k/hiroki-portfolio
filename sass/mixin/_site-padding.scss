@@ -1,0 +1,10 @@
+$widthSp: 600px;
+$widthBase: 1280px;
+
+@mixin sitePaddingSp($top, $right, $bottom, $left) {
+  padding: ($top / $widthSp) * 100vw ($right / $widthSp) * 100vw ($bottom / $widthSp) * 100vw ($left / $widthSp) * 100vw;
+}
+
+@mixin sitePaddingBase($top, $right, $bottom, $left) {
+  padding: ($top / $widthBase) * 100vw ($right / $widthBase) * 100vw ($bottom / $widthBase) * 100vw ($left / $widthBase) * 100vw;
+}

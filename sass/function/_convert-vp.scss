@@ -1,0 +1,11 @@
+@function convertVw($targetSize, $targetWidth) {
+  @return ($targetSize / $targetWidth * 100vw);
+}
+
+@function convertVh($targetSize, $targetHight) {
+  @return ($targetSize / $targetHight * 100vw);
+}
+
+@function convertPercent($targetSize, $targetWidth) {
+  @return ($targetSize / $targetWidth * 100%);
+}

@@ -1,0 +1,23 @@
+@use "config/setting";
+@use "config/reset";
+@use "config/base";
+@use "config/variables";
+
+@use "module/header";
+@use "module/first-view";
+@use "module/works";
+@use "module/skill";
+@use "module/contact";
+@use "module/footer";
+
+@use "module/about/about";
+@use "module/about/about-introduction";
+@use "module/about/about-data";
+
+@use "module/works/works-first";
+@use "module/works/works-list";
+@use "module/works/works-pagination";
+
+@use "module/contact/contact-first";
+@use "module/contact/contact-form";
+@use "module/contact/submit";

@@ -1,0 +1,63 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: vp.convertPercent(1000px, 1280px);
+  margin: 0 auto;
+  font-family: "Avenir";
+  font-weight: 900;
+  @include madia.deviceBreakPointMax(600px) {
+    height: vp.convertVh(100px, 600px);
+  }
+  .site-title {
+    width: vp.convertPercent(300px, 1000px);
+    cursor: pointer;
+    @include madia.deviceBreakPointMax(600px) {
+      display: none;
+    }
+    &__anchor {
+      display: block;
+    }
+  }
+  &-menu {
+    display: flex;
+    letter-spacing: .12em;
+    font-size: 1.6rem;
+    color: #444444;
+    @include madia.deviceBreakPointMax(600px) {
+      display: none;
+    }
+    &__list {
+      @include sp.sitePaddingBase(45px, 26px, 45px, 26px);
+      &-inner {
+        position: relative;
+        cursor: pointer;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -20%;
+          width: 100%;
+          height: 2px;
+          background-color: var.$mainColor;
+          transform: scaleX(0);
+          transform-origin: right top;
+          transition: transform .5s;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+          transform-origin: left top;
+        }
+      }
+    }
+  }
+}

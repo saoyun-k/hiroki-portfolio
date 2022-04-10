@@ -1,0 +1,36 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+.footer {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: vp.convertVh(165px, 1280px);
+    background-color: var.$mainColor;
+    @include madia.deviceBreakPointMax(600px) {
+      height: vp.convertVh(165px, 600px);
+    }
+    .copyright {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #FFFFFF;
+    }
+    &-sp {
+      display: none;
+      @include madia.deviceBreakPointMax(600px) {
+        display: block;
+        height: vp.convertVh(250px, 600px);
+        color: var.$colorWhite;
+      }
+    }
+  }
+}

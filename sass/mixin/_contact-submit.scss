@@ -1,0 +1,49 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+
+@mixin contact-submit {
+  .contact__button {
+  width: vp.convertPercent(520px, 1086px);
+  line-height: 3.5em;
+  margin: 0 auto;
+  font-size: 3.2rem;
+  font-family: "Avenir";
+  font-weight: 900;
+  cursor: pointer;
+  @include madia.deviceBreakPointMax(600px) {
+    width: vp.convertPercent(501px, 509px);
+    line-height: 4.2em;
+    margin-top: vp.convertVw(34px, 600px);
+    font-size: 2.6rem;
+    }
+    .conta-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 100vw;
+      background: var.$mainColor;
+      // background: linear-gradient(to right, #364D6A, #599DC0);
+      transition: .3s;
+      @include madia.deviceBreakPointMax(600px) {
+        width: 100%;
+        height: 100%;
+        }
+      &:hover {
+        transform: scale(1.1, 1.1);
+        filter: brightness(150%);
+      }
+    }
+    &__text {
+      color: var.$colorWhite;
+    }
+  }
+}
